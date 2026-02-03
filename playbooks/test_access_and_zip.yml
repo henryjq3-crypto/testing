@@ -1,0 +1,10 @@
+---
+- name: Test access and create a test file zipped on the target
+  hosts: all
+  gather_facts: yes
+
+  collections:
+    - henryorgtesting.server_test
+
+  roles:
+    - role: connectivity_test

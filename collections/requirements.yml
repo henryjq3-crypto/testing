@@ -1,0 +1,7 @@
+---
+collections:
+  - name: henryorgtesting.server_test
+    # In Controller, configure your Automation Hub as a "Collection" repository (URL + token),
+    # then this requirements.yml is enough for Controller to install it.
+    # Optional:
+    # version: "1.0.0"
