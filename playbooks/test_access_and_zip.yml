@@ -3,19 +3,19 @@
   hosts: localhost
   gather_facts: false
   tasks:
-    - name: command: ansible-galaxy collection list
+    - name: Run ansible-galaxy collection list
       command: ansible-galaxy collection list
       register: out
       changed_when: false
-    - debug:
+
+    - name: Display collections
+      debug:
         var: out.stdout_lines
 
 - name: Test access and create a test file zipped on the target
   hosts: all
   gather_facts: yes
 
-  # By defining the collection here, you don't need the 
-  # full namespace for the role anymore.
   collections:
     - henryorgtesting.server_test
 
