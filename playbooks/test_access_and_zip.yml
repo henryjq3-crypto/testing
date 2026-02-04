@@ -3,7 +3,8 @@
   hosts: localhost
   gather_facts: false
   tasks:
-    - command: ansible-galaxy collection list
+    - name: command: ansible-galaxy collection list
+      command: ansible-galaxy collection list
       register: out
       changed_when: false
     - debug:
@@ -13,8 +14,12 @@
   hosts: all
   gather_facts: yes
 
+  # By defining the collection here, you don't need the 
+  # full namespace for the role anymore.
   collections:
     - henryorgtesting.server_test
 
-  roles:
-    - role: henryorgtesting.server_test.connectivity_test
+  tasks:
+    - name: Run connectivity test role
+      include_role:
+        name: connectivity_test
