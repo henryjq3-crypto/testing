@@ -7,4 +7,4 @@
     - henryorgtesting.server_test
 
   roles:
-    - role: connectivity_test
+    - role: henryorgtesting.server_test.connectivity_test
